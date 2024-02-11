@@ -190,14 +190,16 @@
         console.log("FormSubmit Response:", data);
         // You can handle the response as needed
     })
+       // Check if the form was successfully submitted
         if (data.success) {
-            // Redirect back to the original HTML page
-            window.location.href = "index.html";
+            // Redirect back to the original HTML page after 3 seconds
+            setTimeout(function() {
+                window.location.href = "redirect.html";
+            }, 3000); // 3000 milliseconds = 3 seconds
         } else {
             // Handle unsuccessful form submission
             alert("There was an error submitting the form. Please try again.");
         }
-    })
     .catch(error => {
         console.error("FormSubmit Error:", error);
     });
