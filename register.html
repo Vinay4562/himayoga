@@ -161,48 +161,47 @@
     </div>
 
 <script>
-  function handleSubmit() {
-    var name = document.getElementById("Name").value;
-    var email = document.getElementById("Email").value;
-    var selectedItems = document.getElementById("Type Of Problem").options[document.getElementById("Type Of Problem").selectedIndex].text;
-    var Phonenumber = document.getElementById("Phonenumber").value;
-    var message = document.getElementById("message").value;
+    function handleSubmit() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var phoneNumber = document.getElementById("Phonenumber").value;
+        var selectedItems = document.getElementById("Type Of Problem").value;
+        var message = document.getElementById("message").value;
 
-    // Log the values
-    console.log("Name: " + name);
-    console.log("Email: " + email);
-    console.log("Phonenumber: " + Phonenumber)
-    console.log("Selected Items: " + selectedItems);
-    console.log("Message: " + message);
+        // Log the values
+        console.log("Name: " + name);
+        console.log("Email: " + email);
+        console.log("Phone Number: " + phoneNumber);
+        console.log("Selected Items: " + selectedItems);
+        console.log("Message: " + message);
 
-    // Create a FormData object to send the form data
-    var formData = new FormData();
-    formData.append("Name", name);
-    formData.append("Email", email);
-    formData.append("Phonenumber", Phonenumber);
-    formData.append("Type Of Problem", selectedItems);
-    formData.append("Message", message);
+        // Create a FormData object to send the form data
+        var formData = new FormData();
+        formData.append("name", name);
+        formData.append("email", email);
+        formData.append("Phonenumber", phoneNumber);
+        formData.append("Type Of Problem", selectedItems);
+        formData.append("message", message);
 
-    // Use fetch API to send the form data to FormSubmit
-    fetch("https://formsubmit.co/vkvinaykumar391@gmail.com", {
-        method: "POST",
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log("FormSubmit Response:", data);
-        // You can handle the response as needed
-    })
-    .catch(error => {
-        console.error("FormSubmit Error:", error);
-    });
+        // Use fetch API to send the form data to FormSubmit
+        fetch("https://formsubmit.co/30b24bf697ca2db753a2cda2dba657f9", {
+            method: "POST",
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log("FormSubmit Response:", data);
+                // Redirect to success page
+                window.location.href = "https://vinay4562.github.io/himayoga/success.html";
+            })
+            .catch(error => {
+                console.error("FormSubmit Error:", error);
+            });
 
-    // Prevent the default form submission
-    return false;
-}
-
+        // Prevent the default form submission
+        return false;
+    }
 </script>
-
 </body>
 
 </html>
