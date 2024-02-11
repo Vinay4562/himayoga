@@ -145,49 +145,6 @@
         <p>Success! We will get back to you very very soon...</p>
     </div>
 
-<script>
-  function handleSubmit() {
-    var name = document.getElementById("Name").value;
-    var email = document.getElementById("Email").value;
-    var selectedItems = document.getElementById("Type Of Problem").options[document.getElementById("Type Of Problem").selectedIndex].text;
-    var Phonenumber = document.getElementById("Phonenumber").value;
-    var message = document.getElementById("message").value;
-
-    // Log the values
-    console.log("Name: " + name);
-    console.log("Email: " + email);
-    console.log("Phonenumber: " + Phonenumber)
-    console.log("Selected Items: " + selectedItems);
-    console.log("Message: " + message);
-
-    // Create a FormData object to send the form data
-    var formData = new FormData();
-    formData.append("Name", name);
-    formData.append("Email", email);
-    formData.append("Phonenumber", Phonenumber);
-    formData.append("Type Of Problem", selectedItems);
-    formData.append("Message", message);
-
-    // Use fetch API to send the form data to FormSubmit
-    fetch("https://formsubmit.co/vkvinaykumar391@gmail.com", {
-        method: "POST",
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log("FormSubmit Response:", data);
-        // You can handle the response as needed
-    })
-    .catch(error => {
-        console.error("FormSubmit Error:", error);
-    });
-
-    // Prevent the default form submission
-    return false;
-}
-
-
-</script>
 
 </body>
 
